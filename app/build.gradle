@@ -20,8 +20,15 @@ android {
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
+
     implementation Support.appcompatv7
     implementation Deps.constraintLayout
+
+    implementation Deps.kotlin
+
+    implementation Kodein.jvm
+    implementation Kodein.androidCoreSupport
+
     testImplementation Testing.junit
     androidTestImplementation Testing.supportRunner
     androidTestImplementation Testing.espressoCore

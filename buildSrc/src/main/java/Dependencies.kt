@@ -1,5 +1,6 @@
 object Versions {
-    const val kotlin = "1.2.60"
+    const val kotlin = "1.2.61"
+    const val kodein = "5.2.0"
     const val supportLibraryVersion = "27.1.1"
 }
 
@@ -21,6 +22,12 @@ object Arch {
     const val roomRuntime = "android.arch.persistence.room:runtime:1.0.0"
     const val roomRxAdapter = "android.arch.persistence.room:rxjava2:1.0.0"
     const val roomCompiler = "android.arch.persistence.room:compiler:1.0.0"
+}
+
+object Kodein {
+    const val jvm = "org.kodein.di:kodein-di-generic-jvm:${Versions.kodein}"
+    const val androidCore = "org.kodein.di:kodein-di-framework-android-core:${Versions.kodein}"
+    const val androidCoreSupport = "org.kodein.di:kodein-di-framework-android-support:${Versions.kodein}"
 }
 
 object Reactive {
