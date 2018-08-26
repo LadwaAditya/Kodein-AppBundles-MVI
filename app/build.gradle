@@ -3,7 +3,7 @@ apply plugin: 'com.android.application'
 android {
     compileSdkVersion Android.compileSdkVersion
     defaultConfig {
-        applicationId "com.adityaladwa.koin_dynamic_delievery_mvi"
+        applicationId "com.aditya.main"
         minSdkVersion Android.minSdkVersion
         targetSdkVersion Android.targetSdkVersion
         versionCode 1

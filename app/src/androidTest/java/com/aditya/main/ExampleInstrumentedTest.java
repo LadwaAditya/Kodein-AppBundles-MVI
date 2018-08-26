@@ -1,4 +1,4 @@
-package com.adityaladwa.koin_dynamic_delievery_mvi;
+package com.aditya.main;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;
