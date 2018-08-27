@@ -1,4 +1,4 @@
-package com.aditya.main;
+package com.aditya.kodeinmvi;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;

@@ -1,9 +1,11 @@
 apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
 
 android {
     compileSdkVersion Android.compileSdkVersion
     defaultConfig {
-        applicationId "com.aditya.main"
+        applicationId "com.aditya.kodeinmvi"
         minSdkVersion Android.minSdkVersion
         targetSdkVersion Android.targetSdkVersion
         versionCode 1

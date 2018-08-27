@@ -1,4 +1,4 @@
-package com.aditya.main;
+package com.aditya.kodeinmvi;
 
 import org.junit.Test;
 
