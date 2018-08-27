@@ -3,35 +3,46 @@ apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 
 android {
-    compileSdkVersion Android.compileSdkVersion
-    defaultConfig {
-        applicationId "com.aditya.kodeinmvi"
-        minSdkVersion Android.minSdkVersion
-        targetSdkVersion Android.targetSdkVersion
-        versionCode 1
-        versionName "1.0"
-        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+  compileSdkVersion Android.compileSdkVersion
+  defaultConfig {
+    applicationId "com.aditya.kodeinmvi"
+    minSdkVersion Android.minSdkVersion
+    targetSdkVersion Android.targetSdkVersion
+    versionCode 1
+    versionName "1.0"
+    testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+  }
+  buildTypes {
+    release {
+      minifyEnabled false
+      proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
     }
-    buildTypes {
-        release {
-            minifyEnabled false
-            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
-        }
-    }
+  }
 }
 
 dependencies {
-    implementation fileTree(dir: 'libs', include: ['*.jar'])
+  implementation fileTree(dir: 'libs', include: ['*.jar'])
 
-    implementation Support.appcompatv7
-    implementation Deps.constraintLayout
+  implementation Support.appcompatv7
+  implementation Deps.constraintLayout
 
-    implementation Deps.kotlin
+  implementation Deps.kotlin
 
-    implementation Kodein.jvm
-    implementation Kodein.androidCoreSupport
+  implementation Kodein.jvm
+  implementation Kodein.androidCoreSupport
 
-    testImplementation Testing.junit
-    androidTestImplementation Testing.supportRunner
-    androidTestImplementation Testing.espressoCore
+  //Network (Retrofit, OkHttp, Logging interceptor)
+  implementation Network.okhttp
+  implementation Network.okhttpLoggingInterceptor
+  implementation Network.retrofit
+  implementation Network.gson
+  implementation Network.retrofitRxAdapter
+
+  //Chuck Interceptor
+  debugImplementation Debug.chuck
+  releaseImplementation Debug.chuckNoOp
+
+  testImplementation Testing.junit
+  androidTestImplementation Testing.supportRunner
+  androidTestImplementation Testing.espressoCore
 }

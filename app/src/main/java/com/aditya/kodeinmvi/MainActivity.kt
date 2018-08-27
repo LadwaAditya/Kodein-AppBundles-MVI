@@ -8,12 +8,12 @@ import org.kodein.di.android.closestKodein
 import org.kodein.di.generic.instance
 
 class MainActivity : AppCompatActivity(), KodeinAware {
-    override val kodein by closestKodein()
+  override val kodein by closestKodein()
 
-    private val preferences: SharedPreferences by instance()
+  private val preferences: SharedPreferences by instance()
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
-    }
+  override fun onCreate(savedInstanceState: Bundle?) {
+    super.onCreate(savedInstanceState)
+    setContentView(R.layout.activity_main)
+  }
 }
