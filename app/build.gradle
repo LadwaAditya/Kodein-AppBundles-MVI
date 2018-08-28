@@ -18,10 +18,11 @@ android {
       proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
     }
   }
+
+  dynamicFeatures = [":detail"]
 }
 
 dependencies {
-  implementation fileTree(dir: 'libs', include: ['*.jar'])
 
   implementation Support.appcompatv7
   implementation Support.design

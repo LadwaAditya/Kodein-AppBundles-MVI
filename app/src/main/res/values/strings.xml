@@ -1,3 +1,4 @@
 <resources>
-    <string name="app_name">Kodein-AppBundles-MVI</string>
+  <string name="app_name">Kodein-AppBundles-MVI</string>
+  <string name="title_detail">Module Title</string>
 </resources>
