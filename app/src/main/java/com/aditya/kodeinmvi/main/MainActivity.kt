@@ -1,15 +1,18 @@
-package com.aditya.kodeinmvi
+package com.aditya.kodeinmvi.main
 
 import android.content.SharedPreferences
 import android.os.Bundle
-import android.support.v7.app.AppCompatActivity
+import com.aditya.kodeinmvi.R
+import com.aditya.kodeinmvi.base.BaseActivity
 import okhttp3.OkHttpClient
-import org.kodein.di.KodeinAware
-import org.kodein.di.android.closestKodein
+import org.kodein.di.Kodein
 import org.kodein.di.generic.instance
 
-class MainActivity : AppCompatActivity(), KodeinAware {
-  override val kodein by closestKodein()
+class MainActivity : BaseActivity() {
+
+  override fun provideModule(): (Kodein.MainBuilder) -> Unit = {
+    it.import(MainModule.mainModule(this))
+  }
 
   private val preferences: SharedPreferences by instance()
   private val okHttpClient: OkHttpClient by instance()

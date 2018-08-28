@@ -1,7 +1,8 @@
-package com.aditya.kodeinmvi
+package com.aditya.kodeinmvi.base
 
 import android.content.Context
 import android.content.SharedPreferences
+import com.aditya.kodeinmvi.BuildConfig
 import com.google.gson.FieldNamingPolicy
 import com.google.gson.Gson
 import com.google.gson.GsonBuilder
