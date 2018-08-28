@@ -17,12 +17,13 @@ import java.io.File
 import java.util.concurrent.TimeUnit
 
 private const val CACHE_SIZE: Long = 10 * 1024 * 1024
-
+private const val PREF_FILE = "myapp_pref"
+private const val OKHTTP_CACHE = "okHttpCache"
+private const val GSON_DATE_FORMAT = "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'"
 
 fun baseModule(context: Context) = Kodein.Module(name = "baseModule") {
 
-  bind<SharedPreferences>() with singleton { context.getSharedPreferences("test", Context.MODE_PRIVATE) }
-
+  bind<SharedPreferences>() with singleton { context.getSharedPreferences(PREF_FILE, Context.MODE_PRIVATE) }
   bind<OkHttpClient>() with singleton { provideOkhttp(instance(), instance()) }
 
   bind<Cache>() with singleton { provideCache(context) }
@@ -52,12 +53,12 @@ fun provideOkhttp(
 private fun provideCache(
   context: Context
 ): Cache {
-  return Cache(File(context.cacheDir, "okhttpCache"), CACHE_SIZE)
+  return Cache(File(context.cacheDir, OKHTTP_CACHE), CACHE_SIZE)
 }
 
 private fun provideGson(): Gson {
   return GsonBuilder()
-    .setDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS'Z'")
+    .setDateFormat(GSON_DATE_FORMAT)
     .setFieldNamingPolicy(FieldNamingPolicy.LOWER_CASE_WITH_UNDERSCORES)
     .create()
 }

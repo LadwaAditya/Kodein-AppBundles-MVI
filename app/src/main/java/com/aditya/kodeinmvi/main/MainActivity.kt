@@ -10,12 +10,12 @@ import org.kodein.di.generic.instance
 
 class MainActivity : BaseActivity() {
 
+  private val preferences: SharedPreferences by instance()
+  private val okHttpClient: OkHttpClient by instance()
+
   override fun provideModule(): (Kodein.MainBuilder) -> Unit = {
     it.import(MainModule.mainModule(this))
   }
-
-  private val preferences: SharedPreferences by instance()
-  private val okHttpClient: OkHttpClient by instance()
 
   override fun onCreate(savedInstanceState: Bundle?) {
     super.onCreate(savedInstanceState)
