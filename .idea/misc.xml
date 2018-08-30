@@ -34,8 +34,7 @@
   <component name="SuppressABINotification">
     <option name="modulesWithSuppressedNotConfigured">
       <set>
-        <option value="app" />
-        <option value="buildSrc" />
+        <option value="detail" />
       </set>
     </option>
   </component>

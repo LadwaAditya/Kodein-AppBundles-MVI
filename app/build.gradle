@@ -20,6 +20,18 @@ android {
   }
 
   dynamicFeatures = [":detail"]
+
+  bundle {
+    language {
+      enableSplit = false
+    }
+    density {
+      enableSplit = true
+    }
+    abi {
+      enableSplit = true
+    }
+  }
 }
 
 dependencies {
